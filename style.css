@@ -1,0 +1,438 @@
+:root {
+    --primary: #2563eb;
+    --secondary: #7dd3fc;
+    --dark: #0f172a;
+    --light: #f8fafc;
+    --gray: #94a3b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: #f1f5f9;
+    transform: skewY(-3deg);
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 2;
+}
+
+#projects {
+    padding: 60px 0;
+    position: relative;
+    z-index: 2;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.2rem;
+    color: var(--primary);
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--secondary);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.1);
+    margin-bottom: 50px;
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.project-preview {
+    flex: 1;
+    min-height: 350px;
+    overflow: hidden;
+}
+
+.project-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-preview img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.project-info p {
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tech-stack span {
+    background: #e0f2fe;
+    color: var(--primary);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.project-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn:hover {
+    background: white;
+    color: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.btn img {
+    margin-right: 8px;
+}
+
+.btn.github {
+    background: var(--dark);
+}
+
+.btn.github:hover {
+    background: white;
+    color: var(--dark);
+    border-color: var(--dark);
+}
+
+/* Стили для блока "Скоро новый проект" */
+.upcoming-project {
+    background: white;
+    border-radius: 12px;
+    padding: 50px;
+    margin: 60px 0;
+    text-align: center;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.1);
+    border: 2px dashed var(--secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.upcoming-project::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.03) 0%, rgba(125, 211, 252, 0.03) 100%);
+    z-index: 1;
+}
+
+.upcoming-content {
+    position: relative;
+    z-index: 2;
+}
+
+.upcoming-project h3 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.upcoming-project p {
+    font-size: 1.1rem;
+    color: var(--dark);
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+}
+
+.progress-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.progress-bar {
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+    border-radius: 5px;
+    width: 65%;
+    position: relative;
+    animation: progress-animation 2s ease-in-out infinite alternate;
+}
+
+@keyframes progress-animation {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+.progress-container span {
+    font-size: 0.9rem;
+    color: var(--gray);
+    font-weight: 500;
+}
+
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 30px 0;
+    margin-top: 80px;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contacts {
+    display: flex;
+    gap: 20px;
+}
+
+.contacts a {
+    transition: transform 0.3s ease;
+}
+
+.contacts a:hover {
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column;
+    }
+    
+    .project-preview {
+        min-height: 250px;
+    }
+    
+    .project-info {
+        padding: 30px;
+    }
+    
+    .upcoming-project {
+        padding: 30px 20px;
+        
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    .project-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Стили для переключателя темы */
+.theme-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.toggle-input {
+    display: none;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+    height: 30px;
+    background: var(--dark);
+    border-radius: 50px;
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.toggle-label::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.toggle-input:checked + .toggle-label::after {
+    transform: translateX(30px);
+}
+
+.sun, .moon {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.sun {
+    color: #ffd700;
+}
+
+.moon {
+    color: #f8fafc;
+}
+
+/* Темная тема */
+body.dark {
+    --primary: #3b82f6;
+    --secondary: #60a5fa;
+    --dark: #f8fafc;
+    --light: #1e293b;
+    --gray: #94a3b8;
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+body.dark .project-card,
+body.dark .upcoming-project {
+    background: #1e293b;
+    color: #f8fafc;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.3);
+}
+
+body.dark .project-info p,
+body.dark .tech-stack span,
+body.dark .upcoming-project p {
+    color: #e2e8f0;
+}
+
+body.dark .tech-stack span {
+    background: rgba(59, 130, 246, 0.2);
+    color: #93c5fd;
+}
+
+body.dark .btn {
+    color: #0f172a;
+}
+
+body.dark .btn:hover {
+    color: var(--primary);
+}
