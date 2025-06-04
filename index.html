@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f1f5f9" id="themeColor">
+    <title>Портфолио фронтенд-разработчика</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Джума</h1>
+            <p>Frontend разработчик | UI/UX энтузиаст</p>            
+            <div class="theme-switcher">
+                <input type="checkbox" id="themeToggle" class="toggle-input">
+                <label for="themeToggle" class="toggle-label">
+                    <span class="sun">☀️</span>
+                    <span class="moon">🌙</span>
+                </label>
+            </div>
+        </div>
+    </header>
+    <section id="projects">
+        <div class="container">
+            <h2>Мои проекты</h2>
+            <div class="project-card">
+                <div class="project-preview">
+                    <img src="https://github.com/juma-annanur/glassmorphism-login-form/blob/main/preview.jpg?raw=true" alt="Форма входа Glassmorphism">
+                </div>
+                <div class="project-info">
+                    <h3>Glassmorphism Login Form</h3>
+                    <p>Современная форма входа с эффектом стекломорфизма, адаптивная верстка, интерактивные элементы</p>
+                    <div class="tech-stack">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://juma-annanur.github.io/glassmorphism-login-form/" class="btn">Демо</a>
+                        <a href="https://github.com/juma-annanur/glassmorphism-login-form" class="btn github" target="_blank">
+                            <img src="https://img.icons8.com/ios-glyphs/30/ffffff/github.png" alt="GitHub">
+                            Код
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Блок "Скоро новый проект" -->
+            <div class="upcoming-project">
+                <div class="upcoming-content">
+                    <h3>🚀 Скоро новый проект!</h3>
+                    <p>Сейчас активно работаю над React-приложением с использованием TypeScript</p>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 65%"></div>
+                        </div>
+                        <span>65% завершено</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>© 2024 Джума. Все права защищены</p>
+            <div class="contacts">
+                <a href="https://github.com/juma-annanur" target="_blank">
+                    <img src="https://img.icons8.com/ios-glyphs/30/7dd3fc/github.png" alt="GitHub">
+                </a>
+                <a href="mailto:jannanurow@gmail.com">
+                    <img src="https://img.icons8.com/ios-glyphs/30/7dd3fc/gmail.png" alt="Email">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Проверяем сохраненную тему в localStorage
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.classList.toggle('dark', savedTheme === 'dark');
+        
+        // Устанавливаем начальное состояние переключателя
+        const toggle = document.getElementById('themeToggle');
+        toggle.checked = savedTheme === 'dark';
+        
+        // Обработчик изменения темы
+        toggle.addEventListener('change', (e) => {
+            const isDark = e.target.checked;
+            document.body.classList.toggle('dark', isDark);
+            
+            // Сохраняем выбор в localStorage
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            
+            // Обновляем мета-тег для темы (опционально)
+            document.querySelector('meta[name="theme-color"]').content = 
+                isDark ? '#0f172a' : '#f1f5f9';
+        });
+    </script>
+</body>
+</html>
